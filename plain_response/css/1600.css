@@ -1,0 +1,8 @@
+body {
+	font-size: 150%;
+	background: url(../images/body-bg.png) #888 repeat top left;
+}
+
+.page-wrapper {
+	box-shadow: 0px 0px 20px black;
+}

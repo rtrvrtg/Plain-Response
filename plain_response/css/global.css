@@ -1,0 +1,233 @@
+/* Containers */
+
+.page-header-container,
+.page-header-user-bar,
+.page-header-top-nav, 
+.page-content-container, 
+.page-content,
+.page-footer-container {
+	clear: both;
+}
+
+.page-header-container,
+.page-content-container, 
+.page-footer-container {
+	padding: 1em 0.5em;
+}
+
+/* HTML5 Tags */
+
+nav, header, footer, section, article, aside {
+	display: block;
+}
+
+/* Page & Typography */
+
+body {
+	background: #888;
+	color: #111;
+	font-family: sans-serif;
+	margin: 0;
+	
+	font-size: 75%;
+	line-height: 1.3em;
+}
+
+h1 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 1.25em;
+	line-height: 1.2em;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+}
+
+h3 {
+	font-size: 1.125em;
+	line-height: 1.333333em;
+	margin-top: 1.333333em;
+	margin-bottom: 1.333333em;
+}
+
+p {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.form-item, .form-actions {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.item-list ul {
+	margin: 0;
+}
+
+.item-list ul li {
+	margin-bottom: 0;
+}
+
+/* Links */
+
+a {
+	color: #379;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #49a;
+}
+
+a:active, a:focus, 
+li a.active {
+	color: #6bc;
+}
+
+/* Menus */
+
+.block-menu {
+	padding: 0.5em 0;
+}
+
+.block-menu h2 {
+	display: none;
+}
+
+.block-menu .content .menu {
+	margin: 0;
+	padding: 0;
+}
+
+.block-menu .content .menu li {
+	display: inline-block;
+	position: relative;
+}
+
+.block-menu .content .menu li .menu {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	top: 100%;
+	left: -0.5em;
+	visibility: hidden;
+	padding: 0 0.5em;
+	
+	color: white;
+	background: url(../images/footer-bg.png) #111 repeat top left;
+	border-radius: 0.25em;
+}
+
+.block-menu .content .menu li:hover .menu {
+	visibility: visible;
+}
+
+.block-menu .content .menu li .menu li {
+	display: block;
+	margin: 0;
+	position: relative;
+}
+
+.block-menu .content .menu li .menu li a {
+	color: white;
+}
+
+.block-menu .content .menu li .menu li .menu {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	visibility: hidden;
+}
+
+.block-menu .content .menu li .menu li:hover .menu {
+	visibility: visible;
+}
+
+/* Header */
+
+.page-header-container {
+	background: url(../images/header-bg.png) #fff repeat top left;
+}
+
+.site-name-container {
+	text-align: center;
+}
+
+.site-logo {
+	width: 25%;
+	float: none;
+	margin: 0px auto;
+}
+
+.site-logo img {
+	max-height: 200px;
+	margin: 0px auto;
+}
+
+#site-name {
+	font-size: 5em;
+	letter-spacing: -0.075em;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 1em;
+	float: none;
+	font-weight: bold;
+	text-shadow: 0px 0px 15px white;
+}
+
+/* Content */
+
+.page-content-container {
+	background: url(../images/content-bg.png) #eee repeat top left;
+}
+
+.page-content-container:after {
+	content: '.';
+	visibility: invisible;
+}
+
+/* Footer */
+
+.page-footer-container {
+	background: url(../images/footer-bg.png) #111 repeat top left;
+	color: #eee;
+}
+
+/* Images */
+
+img.full {
+	width: 100%;
+}
+img.half {
+	width: 50%;
+}
+img.quarter {
+	width: 25%;
+}
+img.third {
+	width: 33%;
+}
+img.twothirds {
+	width: 66%;
+}
+img.threequarters {
+	width: 75%;
+}
+
+/* Node */
+
+.node .field-name-field-image img {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+/* Top fixed */
+
+.top-fixed.top-fixed-active {
+	position: fixed;
+	top: 0;
+}

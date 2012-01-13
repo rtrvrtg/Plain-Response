@@ -1,0 +1,69 @@
+name = Plain Response
+description = A simple, clean responsive layout.
+core = 7.x
+engine = phptemplate
+screenshot = screenshot.png
+version = 1.x
+
+; Included and linked libraries
+
+; === Tiny Fluid Grid ===
+; http://tinyfluidgrid.com/
+; License: CC BY-SA 3.0
+
+; === Respond Shim === 
+; https://github.com/scottjehl/Respond
+; See lib/Respond/README.md for instructions on CND/cross-site proxying
+; License: MIT/GPL2
+
+; === HTML5 Shim === 
+; Linked in templates/html.tpl.php
+; http://code.google.com/p/html5shim/
+; License: MIT/GPL2
+
+; Regions
+
+regions[header] = Header
+regions[user_bar] = User Bar
+regions[top_nav] = Top Nav Bar
+
+regions[content] = Content
+regions[content_prefix] = Content Prefix
+regions[content_suffix] = Content Suffix
+regions[content_left] = Left Sidebar
+regions[content_right] = Right Sidebar
+
+regions[footer] = Footer
+regions[bottom_nav] = Bottom Nav
+
+regions[closure] = Closure
+
+; Features
+
+features[] = logo
+features[] = name
+features[] = favicon
+
+features[] = slogan
+features[] = mission
+
+features[] = primary_links
+features[] = secondary_links
+features[] = search
+
+features[] = node_user_picture
+features[] = comment_user_picture
+
+; Styles
+
+stylesheets[all][] = css/global.css
+stylesheets[all and (min-width: 800px)][] = lib/TinyFluidGrid/grid.css
+stylesheets[all and (min-width: 800px)][] = css/800.css
+stylesheets[all and (min-width: 1200px)][] = css/1200.css
+stylesheets[all and (min-width: 1600px)][] = css/1600.css
+
+; Scripts
+
+scripts[] = lib/Respond/respond.min.js
+scripts[] = js/image-respond.js
+

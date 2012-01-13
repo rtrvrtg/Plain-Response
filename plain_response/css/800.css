@@ -1,0 +1,25 @@
+body {
+	font-size: 100%;
+	line-height: 1.5em;
+}
+
+.page-header-container,
+.page-content-container, 
+.page-footer-container {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.site-name-container {
+	text-align: left;
+}
+
+.site-logo {
+	width: 23.75%;
+	float: left;
+	margin: 0 0 0 0.625%;
+}
+
+#site-name {
+	float: left;
+}
