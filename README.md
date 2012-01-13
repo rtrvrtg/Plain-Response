@@ -2,7 +2,7 @@
 
 a simple responsive theme for Drupal 7 (with a few neat twists)
 
-by Geoffrey Roberts
+by Geoffrey Roberts  
 g.roberts@blackicemedia.com
 
 ## About this theme
@@ -18,18 +18,18 @@ The license for this theme (GPL version 2) is included at the end of this docume
 
 This theme uses the following external components:
 
-** Tiny Fluid Grid **  
+**Tiny Fluid Grid**  
 http://tinyfluidgrid.com/  
 created by Girlfriend NYC (http://www.girlfriendnyc.com/)  
 License: CC BY-SA 3.0
 
-** Respond Shim **  
+**Respond Shim**  
 https://github.com/scottjehl/Respond  
 created by Scott Jehl (http://scottjehl.com/)  
 See lib/Respond/README.md for instructions on implementing CND/cross-site proxying support.  
 License: MIT / GPL2
 
-** HTML5 Shim **  
+**HTML5 Shim**  
 http://code.google.com/p/html5shim/  
 License: MIT / GPL2
 
@@ -48,13 +48,39 @@ they will not have any custom changes you made.
 
 ## Implementation Details
 
-### Flexible Images
-
-TODO
-
 ### Theme-Specific Image Styles
 
-TODO
+This theme relies on custom image style being enabled.
+
+The **theme-settings.php** file stores some custom form alterations for the theme settings 
+form that creates image styles from presets when a button is clicked, and can disable them 
+again when another button is clicked.
+
+By default, the image styles scale the images to a given width, and don't allow upscaling 
+to ensure that smaller images are loaded at their largest size.  (The images will be scaled 
+by percentage later.)
+
+### Flexible Images
+
+This component allows images to be loaded at different resolutions depending on the 
+size of the browser window.
+
+There is a theme override for __theme_image_style__ that adds a custom, non-standard 
+variable called **originalsrc** to the img tags that specifies Drupal's internal path 
+to the file (eg. public://whatever.jpg).
+
+A JavaScript implementation of the Drupal API's 
+[_image_styles_url_](http://api.drupal.org/api/drupal/modules--image--image.module/function/image_style_url/7) 
+function generates URLs from an image style name and an image's originalsrc attribute. 
+The resulting URL points to versions of an image that have been converted to 
+a particular image style.  The image's src variable is then changed to the new image, and 
+the new image is dynamically loaded.
+
+By default, the smallest image style is used to ensure that mobile devices are served the 
+lowest bandwidth images by default.
+
+This function is called whenever the browser is resized, so any images with an originalsrc 
+variable are dynamically reloaded.  Same happens when the page is loaded.
 
 ## License
 
