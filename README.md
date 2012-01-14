@@ -108,7 +108,7 @@ started with it.
 
 ## License
 
-Plain Response: a simple responsive theme for Drupal 7
+Plain Response: a simple responsive theme for Drupal 7  
 Copyright © 2012 Geoffrey Roberts
 
 This program is free software; you can redistribute it and/or modify it under the terms 

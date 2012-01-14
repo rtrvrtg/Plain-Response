@@ -106,6 +106,7 @@ li a.active {
 .block-menu .content .menu li {
 	display: inline-block;
 	position: relative;
+	white-space: nowrap;
 }
 
 .block-menu .content .menu li .menu {
@@ -141,6 +142,10 @@ li a.active {
 	top: 0;
 	left: 100%;
 	visibility: hidden;
+}
+
+.block-menu .content .menu li .menu li:hover {
+	background-color: #333;
 }
 
 .block-menu .content .menu li .menu li:hover > .menu {
