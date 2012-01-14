@@ -93,6 +93,18 @@ lowest bandwidth images by default.
 This function is called whenever the browser is resized, so any images with an originalsrc 
 variable are dynamically reloaded.  Same happens when the page is loaded.
 
+### Why this implementation of Flexible Images
+
+Since I developed this theme for a presentation, I didn't want to prevent the user from 
+setting it up for themselves by making it hard to install.  I figured the .htaccess based 
+approach a lot of other flexible image techniques use was too technical and esoteric to 
+be accessible to a lot of theme developers.
+
+To this end, I chose a method that was probably not the most ideal, but is probably a lot easier 
+for people to get started with.  It still uses Drupal's standard image style API, and having 
+all the functionality baked into the theme should make it a lot simpler for themers to get 
+started with it.
+
 ## License
 
 Plain Response: a simple responsive theme for Drupal 7

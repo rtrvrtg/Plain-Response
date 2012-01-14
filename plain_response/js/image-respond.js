@@ -25,8 +25,8 @@
 	  
 	  var priv = {
 	    init: function() {
-	      if (!params.image.getAttribute('originalsrc')) {
-	        params.image.setAttribute('originalsrc', params.image.src);
+	      if (!params.image.getAttribute('data-originalsrc')) {
+	        params.image.setAttribute('data-originalsrc', params.image.src);
 	      }
 	      pub.update();
 	    },
@@ -38,7 +38,7 @@
 	    },
 	    
 	    url: function(style) {
-	      var parts = params.image.getAttribute('originalsrc').split('://'),
+	      var parts = params.image.getAttribute('data-originalsrc').split('://'),
 	      scheme = '',
 	      path = '';
 	      

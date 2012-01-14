@@ -98,7 +98,7 @@ function plain_response_image_style($variables) {
   $variables['height'] = $dimensions['height'];
 
   $original_path = $variables['path'];
-  $variables['attributes']['originalsrc'] = $original_path;
+  $variables['attributes']['data-originalsrc'] = $original_path;
   // Determine the url for the styled image.
   $variables['path'] = image_style_url($variables['style_name'], $original_path);
   
@@ -118,15 +118,15 @@ function plain_response_image_style($variables) {
 
 /**
  * Override for theme_image
- * Ensures that the originalsrc attribute is set
+ * Ensures that the data-originalsrc attribute is set
  */
 
 function plain_response_image($variables) {
   $attributes = $variables['attributes'];
   $attributes['src'] = file_create_url($variables['path']);
   
-  if (!isset($attributes['originalsrc'])) {
-    $attributes['originalsrc'] = $variables['path'];
+  if (!isset($attributes['data-originalsrc'])) {
+    $attributes['data-originalsrc'] = $variables['path'];
   }
 
   foreach (array('width', 'height', 'alt', 'title') as $key) {
