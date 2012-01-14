@@ -143,13 +143,12 @@ function _plain_response_check_styles() {
 
 function plain_response_form_system_theme_settings_alter(&$form, &$form_state) {
   
-  $form['theme_settings']['fix_nav'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Fix nav to top of window'),
-    '#value' => theme_get_setting('fix_nav'),
+  $form['plain_response_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Plain Response custom settings'),
   );
   
-  $form['theme_settings']['enable_custom_image_styles'] = array(
+  $form['plain_response_settings']['enable_custom_image_styles'] = array(
     '#type' => 'submit',
     '#value' => t('Add Custom Image Styles'),
     '#prefix' => '<p>'.(
@@ -159,11 +158,26 @@ function plain_response_form_system_theme_settings_alter(&$form, &$form_state) {
     '#submit' => array('_plain_response_settings_form_submitted'),
   );
   
-  $form['theme_settings']['disable_custom_image_styles'] = array(
+  $form['plain_response_settings']['disable_custom_image_styles'] = array(
     '#type' => 'submit',
     '#value' => t('Remove Custom Image Styles'),
     '#submit' => array('_plain_response_settings_form_submitted'),    
   );
+  
+  $form['theme_settings']['fix_nav'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Fix nav to top of window'),
+    '#default_value' => theme_get_setting('fix_nav'),
+  );
+  
+  $form['#submit'][] = 'plain_response_settings_submit';
+}
+
+/**
+ * Set custom settings
+ */
+
+function plain_response_settings_submit($form, $form_state) {
 }
 
 /**

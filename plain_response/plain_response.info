@@ -65,5 +65,9 @@ stylesheets[all and (min-width: 1600px)][] = css/1600.css
 ; Scripts
 
 scripts[] = lib/Respond/respond.min.js
+scripts[] = js/behaviour.js
 scripts[] = js/image-respond.js
 
+; Settings
+
+settings[fix_nav] = 0

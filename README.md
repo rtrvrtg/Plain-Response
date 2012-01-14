@@ -3,7 +3,10 @@
 a simple responsive theme for Drupal 7 (with a few neat twists)
 
 by Geoffrey Roberts  
-g.roberts@blackicemedia.com
+g.roberts@blackicemedia.com  
+geoffrey@crossfunctional.net
+
+Check out a demo of this theme at http://respond.blackicemedia.com
 
 ## About this theme
 
@@ -68,6 +71,14 @@ size of the browser window.
 There is a theme override for __theme_image_style__ that adds a custom, non-standard 
 variable called **originalsrc** to the img tags that specifies Drupal's internal path 
 to the file (eg. public://whatever.jpg).
+
+The reason that this re-implementation is possible is that a new Drupal.settings 
+variable set is created as part of a __template_preprocess_html__ override. 
+This contains a few basic settings such as the site root, the theme path, the default 
+file scheme, and the paths to any implemented stream wrappers.  (Drupal implements 
+__public__, __private__ and __temporary__ by default, but modules such as 
+[System Stream Wrapper](http://drupal.org/project/system_stream_wrapper) can add a few 
+new ones that allow direct access to theme images, module images and so on.)
 
 A JavaScript implementation of the Drupal API's 
 [_image_styles_url_](http://api.drupal.org/api/drupal/modules--image--image.module/function/image_style_url/7) 

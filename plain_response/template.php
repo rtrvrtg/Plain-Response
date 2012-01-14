@@ -48,6 +48,7 @@ function plain_response_preprocess_page(&$vars) {
   	'content' => 'grid_16',
   	'content_left' => '',
   	'content_right' => '',
+  	'top_nav' => '',
   );
   
   /* Make room for logo */
@@ -115,6 +116,11 @@ function plain_response_image_style($variables) {
   return theme('image', $variables);
 }
 
+/**
+ * Override for theme_image
+ * Ensures that the originalsrc attribute is set
+ */
+
 function plain_response_image($variables) {
   $attributes = $variables['attributes'];
   $attributes['src'] = file_create_url($variables['path']);
@@ -131,25 +137,4 @@ function plain_response_image($variables) {
   }
 
   return '<img' . drupal_attributes($attributes) . ' />';
-}
-
-/**
- * Override for hook_image_styles_alter
- * Add image styles for responsive image sizes
- */
-
-function plain_response_image_styles_alter(&$styles) {
-  /*
-  // Check that we only affect a default style.
-  if ($styles['thumbnail']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    // Add an additional effect to the thumbnail style.
-    $styles['thumbnail']['effects'][] = array(
-      'name' => 'image_desaturate', 
-      'data' => array(), 
-      'weight' => 1, 
-      'effect callback' => 'image_desaturate_effect',
-    );
-  }
-  */
-  drupal_set_message('<pre>'.print_r($styles,1).'</pre>');
 }
